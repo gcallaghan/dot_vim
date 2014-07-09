@@ -112,11 +112,6 @@ let g:airline_mode_map = {
 " let g:airline_section_z = '%3p%% %#__accent_bold#%4l%#__restore__#:%3'
 " let g:airline_section_z = '%3p%% %{substitute(line("."), "\\v(\\d)((\\d\\d\\d)+\\d@!)@=", "\\1,", "g")}|%{substitute(line("$"), "\\v(\\d)((\\d\\d\\d)+\\d@!)@=", "\\1,", "g")}'
 
-" ---------------
-" jellybeans.vim colorscheme tweaks
-" ---------------
-" Make cssAttrs (center, block, etc.) the same color as units
-hi! link cssAttr Constant
 
 " ---------------
 " Ag.vim
@@ -319,4 +314,6 @@ let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_autoimport = 0
 let g:pymode_rope_autoimport_modules = ['os', 'shutil', 'datetime']
+
+
 

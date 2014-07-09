@@ -33,7 +33,15 @@ if test $(which vim)
 then
     vim "+mkspell ~/.vim/spell/custom.en.utf-8.add" +PluginInstall +qall
 else
-    fail 'mvim or vim not found in path.'
+    fail 'mvim or vim not found in path.'j
 fi
+
+
+ln -s ~/.vim ~/src/dot_vim
+ln -s ~/.vimrc ~/src/dot_vim/vimrc
+ln -s ~/.gvimrc ~/src/dot_vim/gvimrc
+mkdir ~/.vim/.backup
+mkdir ~/.vim/.tmp
+
 
 success 'Setup complete. Run vim and enjoy'
