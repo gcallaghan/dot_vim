@@ -24,9 +24,9 @@ Plugin 'ZoomWin'
 """"""""""""""""""
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'bling/vim-airline'
-Bundle 'scrooloose/nerdtree'
+"Bundle 'scrooloose/nerdtree'
 Bundle 'Rykka/colorv.vim'
-Bundle 'nanotech/jellybeans.vim'
+"Bundle 'nanotech/jellybeans.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mhinz/vim-signify'
 Bundle 'mhinz/vim-startify'
@@ -99,7 +99,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'wavded/vim-stylus'
 Plugin 'chrisbra/csv.vim'
 Plugin 'klen/python-mode'
-Plugin 'jmcantrell/vim-virtualenv'
+"Plugin 'jmcantrell/vim-virtualenv'
 
 """"""""""""""
 "  Matching  "

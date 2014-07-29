@@ -37,9 +37,9 @@ else
 fi
 
 
-ln -s ~/.vim ~/src/dot_vim
-ln -s ~/.vimrc ~/src/dot_vim/vimrc
-ln -s ~/.gvimrc ~/src/dot_vim/gvimrc
+ln -s ~/src/dot_vim ~/.vim
+ln -s ~/src/dot_vim/vimrc ~/.vimrc
+ln -s ~/src/dot_vim/gvimrc ~/.gvimrc
 mkdir ~/.vim/.backup
 mkdir ~/.vim/.tmp
 

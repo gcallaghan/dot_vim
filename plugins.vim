@@ -38,15 +38,15 @@ let g:syntastic_full_redraws = 1
 " ---------------
 " NERDTree
 " ---------------
-nnoremap <leader>nn :NERDTreeToggle<CR>
-nnoremap <leader>nf :NERDTreeFind<CR>
-let g:NERDTreeShowBookmarks = 1
-let g:NERDTreeChDirMode = 1
-let g:NERDTreeMinimalUI = 1
-" Close Vim if NERDTree is the last buffer
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
-  \&& b:NERDTreeType == "primary") | q | endif
-
+" nnoremap <leader>nn :NERDTreeToggle<CR>
+" nnoremap <leader>nf :NERDTreeFind<CR>
+" let g:NERDTreeShowBookmarks = 1
+" let g:NERDTreeChDirMode = 1
+" let g:NERDTreeMinimalUI = 1
+" " Close Vim if NERDTree is the last buffer
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
+"   \&& b:NERDTreeType == "primary") | q | endif
+"
 " ---------------
 " Indent Guides
 " ---------------
@@ -238,7 +238,7 @@ hi StartifySlash   ctermfg=240
 autocmd VimEnter *
             \ if !argc() |
             \   Startify |
-            \   NERDTree |
+            ""\   NERDTree |
             \   execute "normal \<c-w>w" |
             \ endif
 " Keep NERDTree from opening a split when startify is open
