@@ -6,6 +6,7 @@
 " Vundle
 " ---------------
 command! ReloadVundle source ~/.vim/vundle.vim
+
 function PluginReloadAndRun(command)
   :ReloadVundle
   execute a:command
@@ -19,21 +20,13 @@ nnoremap <Leader>pc :call PluginReloadAndRun("PluginClean")<CR>
 " space.vim
 " ---------------
 " Disables space mappings in select mode to fix snipMate.
-let g:space_disable_select_mode = 1
+" let g:space_disable_select_mode = 1
 
 " ---------------
 " Syntastic
 " ---------------
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': [],
-                           \ 'passive_filetypes': [] }
-let g:syntastic_html_checkers = ['handlebars']
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_full_redraws = 1
 
 " ---------------
 " NERDTree
@@ -133,9 +126,9 @@ map <leader>y# ysi"#
 " ---------------
 " Gifl - Google I'm Feeling Lucky URL Grabber
 " ---------------
-let g:LuckyOutputFormat='markdown'
+" let g:LuckyOutputFormat='markdown'
 " I sometimes run vim without ruby support.
-let g:GIFLSuppressRubyWarning = 1
+" let g:GIFLSuppressRubyWarning = 1
 
 
 " ---------------
@@ -143,16 +136,16 @@ let g:GIFLSuppressRubyWarning = 1
 " ---------------
 " Setup indenthtml to propertly indent html. Without this, formatting doesn't
 " work on html.
-let g:html_indent_inctags = "html,body,head,tbody"
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
+" let g:html_indent_inctags = "html,body,head,tbody"
+" let g:html_indent_script1 = "inc"
+" let g:html_indent_style1 = "inc"
 
 " ---------------
 " Unconditional Paste
 " ---------------
-let g:UnconditionalPaste_NoDefaultMappings = 1
-nnoremap gcP <Plug>UnconditionalPasteCharBefore
-nnoremap gcp <Plug>UnconditionalPasteCharAfter
+" let g:UnconditionalPaste_NoDefaultMappings = 1
+" nnoremap gcP <Plug>UnconditionalPasteCharBefore
+" nnoremap gcp <Plug>UnconditionalPasteCharAfter
 
 " ---------------
 " Gist.vim
@@ -179,17 +172,8 @@ let g:mta_filetypes = {
 let g:ycm_complete_in_comments = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'qf' : 1,
-      \ 'notes' : 1,
-      \ 'unite' : 1,
-      \ 'text' : 1,
-      \ 'vimwiki' : 1,
-      \ 'pandoc' : 1,
-      \ 'infolog' : 1,
-      \ 'mail' : 1
-      \}
+let g:ycm_server_use_vim_stdout = 1
+let g:ycm_server_log_level = 'debug'
 
 let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
 
@@ -234,15 +218,6 @@ hi StartifyHeader  ctermfg=203
 hi StartifyPath    ctermfg=245
 hi StartifySlash   ctermfg=240
 
-" Show Startify and NERDTree on start
-autocmd VimEnter *
-            \ if !argc() |
-            \   Startify |
-            ""\   NERDTree |
-            \   execute "normal \<c-w>w" |
-            \ endif
-" Keep NERDTree from opening a split when startify is open
-autocmd FileType startify setlocal buftype=
 
 let g:startify_recursive_dir = 1
 
@@ -304,7 +279,7 @@ endfunction
 """"""""""""""
 "  Markdown  "
 """"""""""""""
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+" au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 """"""""""""
 "  pymode  "
@@ -312,8 +287,6 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
-let g:pymode_rope_autoimport = 0
+let g:pymode_rope_autoimport = 1
 let g:pymode_rope_autoimport_modules = ['os', 'shutil', 'datetime']
-
-
 

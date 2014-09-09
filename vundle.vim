@@ -60,11 +60,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'osyo-manga/vim-anzu'
-Plugin 'Raimondi/delimitMate'
-Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'mutewinter/vim-autoreadwatch'
+"Plugin 'mutewinter/vim-autoreadwatch'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             Language Additions                             "
@@ -73,7 +71,8 @@ Plugin 'mutewinter/vim-autoreadwatch'
 "  Javascript  "
 """"""""""""""""
 
-Plugin 'pangloss/vim-javascript'
+Plugin 'wookiehangover/jshint.vim'
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'leshill/vim-json'
 Plugin 'mustache/vim-mustache-handlebars'
@@ -83,7 +82,6 @@ Plugin 'marijnh/tern_for_vim'
 """"""""""
 "  HTML  "
 """"""""""
-Plugin 'nono/vim-handlebars'
 Plugin 'othree/html5.vim'
 Plugin 'indenthtml.vim'
 

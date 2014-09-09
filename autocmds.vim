@@ -21,9 +21,9 @@ if has("autocmd")
           \ endif
 
     " Fix trailing whitespace in my most used programming langauges
-    autocmd BufWritePre *.py,*.coffee,*.rb,*.erb,*.md,*.scss,*.vim,Cakefile,
-          \*.hbs
-          \ silent! :StripTrailingWhiteSpace
+    " autocmd BufWritePre *.py,*.coffee,*.rb,*.erb,*.md,*.scss,*.vim,Cakefile,
+    "       \*.hbs
+    "       \ silent! :StripTrailingWhiteSpace
 
     " Help mode bindings
     " <enter> to follow tag, <bs> to go back, and q to quit.
@@ -34,12 +34,18 @@ if has("autocmd")
 
     " Fix accidental indentation in html files
     " from http://morearty.com/blog/2013/01/22/fixing-vims-indenting-of-html-files.html
-    autocmd FileType html setlocal indentkeys-=*<Return>
+    " autocmd FileType html setlocal indentkeys-=*<Return>
 
     " Leave the return key alone when in command line windows, since it's used
     " to run commands there.
-    autocmd! CmdwinEnter * :unmap <cr>
-    autocmd! CmdwinLeave * :call MapCR()
+    " autocmd! CmdwinEnter * :unmap <cr>
+    " autocmd! CmdwinLeave * :call MapCR()
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+    " Show Startify  on start
+    autocmd VimEnter *
+                \ if !argc() |
+                \   Startify |
+                \   execute "normal \<c-w>w" |
+                \ endif
   augroup END
 endif
