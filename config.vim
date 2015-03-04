@@ -46,6 +46,9 @@ if exists('+ballooneval')
   set balloondelay=100000
 endif
 
+" set directory view
+let g:netrw_liststyle=3
+
 " ---------------
 " Behaviors
 " ---------------

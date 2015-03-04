@@ -5,11 +5,11 @@
 set nocompatible " be iMproved
 filetype off     " required!
 
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                  Plugins                                   "
@@ -24,9 +24,7 @@ Plugin 'ZoomWin'
 """"""""""""""""""
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'bling/vim-airline'
-"Bundle 'scrooloose/nerdtree'
 Bundle 'Rykka/colorv.vim'
-"Bundle 'nanotech/jellybeans.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mhinz/vim-signify'
 Bundle 'mhinz/vim-startify'
@@ -63,6 +61,7 @@ Plugin 'osyo-manga/vim-anzu'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'mutewinter/vim-autoreadwatch'
+Plugin 'editorconfig/editorconfig-vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             Language Additions                             "
@@ -78,12 +77,15 @@ Plugin 'leshill/vim-json'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'matthewsimo/angular-vim-snippets'
+
 
 """"""""""
 "  HTML  "
 """"""""""
 Plugin 'othree/html5.vim'
 Plugin 'indenthtml.vim'
+Plugin 'vim-scripts/closetag.vim'
 
 """""""""""
 "  Other  "
@@ -91,7 +93,7 @@ Plugin 'indenthtml.vim'
 Plugin 'mutewinter/taskpaper.vim'
 Plugin 'mutewinter/nginx.vim'
 Plugin 'timcharper/textile.vim'
-Plugin 'mutewinter/vim-css3-syntax'
+Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mutewinter/vim-tmux'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'wavded/vim-stylus'

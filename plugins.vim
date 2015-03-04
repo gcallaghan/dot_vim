@@ -16,6 +16,8 @@ nnoremap <Leader>pi :call PluginReloadAndRun("PluginInstall")<CR>
 nnoremap <Leader>pu :call PluginReloadAndRun("PluginInstall!")<CR>
 nnoremap <Leader>pc :call PluginReloadAndRun("PluginClean")<CR>
 
+nnoremap <Leader>sb :call JsBeautify()<cr>
+
 " ---------------
 " space.vim
 " ---------------
@@ -27,19 +29,8 @@ nnoremap <Leader>pc :call PluginReloadAndRun("PluginClean")<CR>
 " ---------------
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_scss_checkers = ['scss_lint']
 
-" ---------------
-" NERDTree
-" ---------------
-" nnoremap <leader>nn :NERDTreeToggle<CR>
-" nnoremap <leader>nf :NERDTreeFind<CR>
-" let g:NERDTreeShowBookmarks = 1
-" let g:NERDTreeChDirMode = 1
-" let g:NERDTreeMinimalUI = 1
-" " Close Vim if NERDTree is the last buffer
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
-"   \&& b:NERDTreeType == "primary") | q | endif
-"
 " ---------------
 " Indent Guides
 " ---------------
@@ -140,6 +131,9 @@ map <leader>y# ysi"#
 " let g:html_indent_script1 = "inc"
 " let g:html_indent_style1 = "inc"
 
+autocmd FileType html,handlebars,javascript let b:closetag_html_style=1
+autocmd FileType html,handlebars,javascript source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+
 " ---------------
 " Unconditional Paste
 " ---------------
@@ -229,7 +223,7 @@ let g:togglecursor_leave='line'
 " ---------------
 " UltiSnips
 " ---------------
-" let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+ let g:UltiSnipsSnippetDirectories=["UltiSnips", "MyUltiSnips", "UltiSnips"]
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
@@ -290,3 +284,32 @@ let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_autoimport = 1
 let g:pymode_rope_autoimport_modules = ['os', 'shutil', 'datetime']
 
+
+
+
+" Check that this plugin only gets loaded once.
+if exists("g:scss_lint_vim")
+  finish
+endif
+
+" Set global variable to ensure plugin is only loaded once.
+let g:scss_lint_vim = "true"
+
+" Call init function when when reading a file with an scss extension.
+autocmd BufRead *.scss call s:init()
+
+" Init function that handles calling the scss lint function
+" when a file is either saved or written to.
+function! s:init()
+	augroup scssLint
+		autocmd BufWritePost,FileWritePost <buffer> call SCSSLint()
+	augroup END
+endfunction
+
+" Run scsslint command on the current file opened.
+function! SCSSLint()
+  let current_file = shellescape(expand('%s:p'))
+  let cmd = "scss-lint " . current_file
+  let output = system(cmd)
+  echo output
+endfunction
