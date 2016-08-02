@@ -5,12 +5,14 @@
 " ---------------
 " Color
 " ---------------
-set background=dark
-colorscheme solarized
 " Force 256 color mode if available
 if $TERM =~ "-256color"
    set t_Co=256
 endif
+syntax enable
+" let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
 
 " -----------------------------
 " File Locations
@@ -32,7 +34,11 @@ set number         " Line numbers on
 set nowrap         " Line wrapping off
 set laststatus=2   " Always show the statusline
 set cmdheight=2    " Make the command area two lines high
+scriptencoding utf-8
 set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf8,prc
 set noshowmode     " Don't show the mode since Powerline shows it
 set title          " Set the title of the window in the terminal to the file
 if exists('+colorcolumn')
@@ -52,7 +58,6 @@ let g:netrw_liststyle=3
 " ---------------
 " Behaviors
 " ---------------
-syntax enable
 set backup             " Turn on backups
 set autoread           " Automatically reload changes if detected
 set wildmenu           " Turn on WiLd menu
@@ -146,3 +151,10 @@ set mouse=a    " Mouse in all modes
 if filereadable("extra.vim")
   source extra.vim
 endif
+
+let g:netrw_altv=1
+
+" ---------------
+" Environment specific
+" ---------------
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4

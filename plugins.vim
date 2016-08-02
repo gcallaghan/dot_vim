@@ -27,9 +27,12 @@ nnoremap <Leader>sb :call JsBeautify()<cr>
 " ---------------
 " Syntastic
 " ---------------
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
+" let g:syntastic_error_symbol = '✗'
+" let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_javascript_checkers = ['standard']
+" let g:syntastic_go_checkers = ['gometalinter', 'golint', 'gofmt', 'gotype', 'govet']
+
 
 " ---------------
 " Indent Guides
@@ -89,7 +92,7 @@ let g:airline_mode_map = {
       \ '' : 'VB',
       \ }
 " Show the current working directory folder name
-" let g:airline_section_b = '%{substitute(getcwd(), ".*\/", "", "g")} '
+let g:airline_section_b = '%{substitute(getcwd(), ".*\/", "", "g")} '
 " Just show the file name
 " let g:airline_section_c = '%t'
 " let g:airline_section_y = ''
@@ -163,19 +166,26 @@ let g:mta_filetypes = {
 " ---------------
 " YouCompleteMe
 " ---------------
+let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_complete_in_comments = 1
-let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_server_use_vim_stdout = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
-
 let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
 
+let g:ycm_key_list_select_completion=["<c-p>"]
+let g:ycm_key_list_previous_completion=["<c-n>"]
 
-let s:clang_library_path='/Library/Developer/CommandLineTools/usr/lib'
-if isdirectory(s:clang_library_path)
-    let g:clang_library_path=s:clang_library_path
-endif
+" ---------------
+" UltiSnips
+" ---------------
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "MyUltiSnips"]
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsListSnippets="<c-h>"
+
 
 " ---------------
 " vim-signify
@@ -220,13 +230,6 @@ let g:startify_recursive_dir = 1
 " ---------------
 let g:togglecursor_leave='line'
 
-" ---------------
-" UltiSnips
-" ---------------
- let g:UltiSnipsSnippetDirectories=["UltiSnips", "MyUltiSnips", "UltiSnips"]
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " ---------------
 " Voogle
@@ -258,31 +261,31 @@ nnoremap <leader>tt :TagbarToggle<CR>
 " --------
 " vim-anzu
 " --------
-nmap n <Plug>(anzu-n)
-nmap N <Plug>(anzu-N)
-nmap * <Plug>(anzu-star)
-nmap # <Plug>(anzu-sharp)
-
-let g:airline#extensions#anzu#enabled = 1
-
-function! s:setupMarkup()
-    nnoremap <leader>p :silent !open -a Google\ Chrome.app '%:p'<CR>
-endfunction
-
+" nmap n <Plug>(anzu-n)
+" nmap N <Plug>(anzu-N)
+" nmap * <Plug>(anzu-star)
+" nmap # <Plug>(anzu-sharp)
+"
+" let g:airline#extensions#anzu#enabled = 1
 
 """"""""""""""
 "  Markdown  "
 """"""""""""""
-" au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+function! s:setupMarkup()
+    nnoremap <leader>p :silent !open -a Google\ Chrome.app '%:p'<CR>
+endfunction
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 """"""""""""
 "  pymode  "
 """"""""""""
-
+let g:pymode_rope=0
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
-let g:pymode_rope_autoimport = 1
-let g:pymode_rope_autoimport_modules = ['os', 'shutil', 'datetime']
+let g:pymode_rope_autoimport = 0
+let g:pymode_rope_regenerate_on_write = 0
+let g:pymode_options_max_line_length = 79
+nnoremap <leader>prf :call pymode#rope#rename_module()<CR>
 
 
 
@@ -313,3 +316,17 @@ function! SCSSLint()
   let output = system(cmd)
   echo output
 endfunction
+
+" ---------------
+" GO specific
+" ---------------
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+
+" ---------------
+" JS specific
+" ---------------
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_param_description_separator = ' - '
+let g:jsdoc_additional_descriptions = 1
+let g:jsdoc_enable_es6 = 1
+

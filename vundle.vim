@@ -19,11 +19,15 @@ Plugin 'gmarik/Vundle.vim'
 """"""""""""""""
 Plugin 'ZoomWin'
 
+Plugin 'fatih/vim-go'
+
+
 """"""""""""""""""
 "  UI Additions  "
 """"""""""""""""""
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'bling/vim-airline'
+" Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'Rykka/colorv.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mhinz/vim-signify'
@@ -49,7 +53,6 @@ Plugin 'HelpClose'
 Plugin 'mattn/gist-vim'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'sk1418/Join'
-Plugin 'papanikge/vim-voogle'
 
 """"""""""""""""""
 "  Auto Helpers  "
@@ -60,7 +63,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'osyo-manga/vim-anzu'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'Valloric/YouCompleteMe'
-"Plugin 'mutewinter/vim-autoreadwatch'
+Plugin 'scrooloose/syntastic'
+Plugin 'ervandew/supertab'
 Plugin 'editorconfig/editorconfig-vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -69,15 +73,11 @@ Plugin 'editorconfig/editorconfig-vim'
 """"""""""""""""
 "  Javascript  "
 """"""""""""""""
-
-Plugin 'wookiehangover/jshint.vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'leshill/vim-json'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'maksimr/vim-jsbeautify'
 Plugin 'marijnh/tern_for_vim'
-Plugin 'matthewsimo/angular-vim-snippets'
+Plugin 'heavenshell/vim-jsdoc'
 
 
 """"""""""
@@ -90,16 +90,13 @@ Plugin 'vim-scripts/closetag.vim'
 """""""""""
 "  Other  "
 """""""""""
-Plugin 'mutewinter/taskpaper.vim'
+Plugin 'Raimondi/delimitMate'
 Plugin 'mutewinter/nginx.vim'
-Plugin 'timcharper/textile.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mutewinter/vim-tmux'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'wavded/vim-stylus'
 Plugin 'chrisbra/csv.vim'
-Plugin 'klen/python-mode'
-"Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'rizzatti/dash.vim'
 
 """"""""""""""
 "  Matching  "
@@ -116,11 +113,6 @@ Plugin 'tpope/vim-repeat'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   DELETE?                                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin 'mattn/webapi-vim'
-" Plugin 'xolox/vim-misc'
-" Plugin 'ervandew/supertab'
-" Plugin 'yssl/QFEnter'
-
 
 call vundle#end()
 

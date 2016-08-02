@@ -40,7 +40,6 @@ if has("autocmd")
     " to run commands there.
     " autocmd! CmdwinEnter * :unmap <cr>
     " autocmd! CmdwinLeave * :call MapCR()
-    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
     " Show Startify  on start
     autocmd VimEnter *
                 \ if !argc() |
@@ -49,3 +48,5 @@ if has("autocmd")
                 \ endif
   augroup END
 endif
+
+autocmd filetype crontab setlocal nobackup nowritebackup
