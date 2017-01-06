@@ -27,11 +27,13 @@ nnoremap <Leader>sb :call JsBeautify()<cr>
 " ---------------
 " Syntastic
 " ---------------
-" let g:syntastic_error_symbol = '✗'
-" let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_javascript_checkers = ['standard']
 " let g:syntastic_go_checkers = ['gometalinter', 'golint', 'gofmt', 'gotype', 'govet']
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 
 " ---------------
@@ -176,6 +178,32 @@ let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
 
 let g:ycm_key_list_select_completion=["<c-p>"]
 let g:ycm_key_list_previous_completion=["<c-n>"]
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'qf' : 1,
+      \ 'notes' : 1,
+      \ 'unite' : 1,
+      \ 'text' : 1,
+      \ 'vimwiki' : 1,
+      \ 'pandoc' : 1,
+      \ 'infolog' : 1,
+      \ 'mail' : 1
+      \}
+let g:ycm_semantic_triggers =  {
+      \   'c' : ['->', '.'],
+      \   'objc' : ['->', '.'],
+      \   'ocaml' : ['.', '#'],
+      \   'cpp,objcpp' : ['->', '.', '::'],
+      \   'perl' : ['->'],
+      \   'php' : ['->', '::', '"', "'", 'use ', 'namespace ', '\'],
+      \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+      \   'html': ['<', '"', '</', ' '],
+      \   'vim' : ['re![_a-za-z]+[_\w]*\.'],
+      \   'ruby' : ['.', '::'],
+      \   'lua' : ['.', ':'],
+      \   'erlang' : [':'],
+      \   'haskell' : ['.', 're!.']
+      \ }
 
 " ---------------
 " UltiSnips
@@ -184,7 +212,8 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "MyUltiSnips"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsListSnippets="<c-h>"
+" let g:UltiSnipsListSnippets="<c-h>"
+autocmd FileType typescript setlocal completeopt+=preview
 
 
 " ---------------
@@ -275,6 +304,7 @@ function! s:setupMarkup()
     nnoremap <leader>p :silent !open -a Google\ Chrome.app '%:p'<CR>
 endfunction
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set filetype=markdown
 
 """"""""""""
 "  pymode  "

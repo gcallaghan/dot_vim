@@ -73,6 +73,9 @@ Plugin 'editorconfig/editorconfig-vim'
 """"""""""""""""
 "  Javascript  "
 """"""""""""""""
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'leshill/vim-json'

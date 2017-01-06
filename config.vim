@@ -36,9 +36,8 @@ set laststatus=2   " Always show the statusline
 set cmdheight=2    " Make the command area two lines high
 scriptencoding utf-8
 set encoding=utf-8
-set termencoding=utf-8
-set fileencoding=utf-8
-set fileencodings=ucs-bom,utf8,prc
+set termencoding=utf8
+set fileencoding=utf8
 set noshowmode     " Don't show the mode since Powerline shows it
 set title          " Set the title of the window in the terminal to the file
 if exists('+colorcolumn')
