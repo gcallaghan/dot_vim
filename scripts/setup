@@ -21,7 +21,7 @@ echo ''
 
 info 'Installing Vundle'
 info '-----------------'
-git clone http://github.com/gmarik/vundle.git bundle/vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 info 'Installing plugins and compiling custom spellings'
 info '-------------------------------------------------'
