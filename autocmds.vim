@@ -47,8 +47,6 @@ if has("autocmd")
                 \   execute "normal \<c-w>w" |
                 \ endif
 
-    " Automatically format javascript files
-    autocmd bufwritepost *.js silent !standard --fix %
     set autoread
   augroup END
 endif

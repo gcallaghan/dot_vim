@@ -33,6 +33,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'mhinz/vim-signify'
 Bundle 'mhinz/vim-startify'
 Bundle 'jszakmeister/vim-togglecursor'
+Bundle 'scrooloose/nerdtree'
 
 """"""""""""""
 "  Commands  "
@@ -76,11 +77,13 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/vim-js-pretty-template'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'leshill/vim-json'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'heavenshell/vim-jsdoc'
+Plugin 'bdauria/angular-cli.vim'
 
 
 """"""""""
@@ -94,12 +97,14 @@ Plugin 'vim-scripts/closetag.vim'
 "  Other  "
 """""""""""
 Plugin 'Raimondi/delimitMate'
+Plugin 'janko-m/vim-test'
 Plugin 'mutewinter/nginx.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mutewinter/vim-tmux'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'chrisbra/csv.vim'
 Plugin 'rizzatti/dash.vim'
+Plugin 'tell-k/vim-autopep8'
 
 """"""""""""""
 "  Matching  "

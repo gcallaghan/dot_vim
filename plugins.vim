@@ -35,6 +35,32 @@ let g:syntastic_javascript_checkers = ['standard']
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi']
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+" ---------------
+" Typescript
+" ---------------
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+autocmd FileType typescript JsPreTmpl html
+autocmd FileType typescript syn clear foldBraces
+
+autocmd VimEnter * if globpath('.,..','node_modules/@angular') != '' | call angular_cli#init() | endif
+
+" ---------------
+" Vim-Test
+" ---------------
+
+let test#javascript#tap#file_pattern = 'spec\.js$'
+let test#javascript#tap#executable = './node_modules/.bin/babel-node ./node_modules/.bin/tape -r ./meta/testSetup.js'
+
 
 " ---------------
 " Indent Guides
@@ -174,7 +200,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
+let g:ycm_path_to_python_interpreter = '/usr/local/opt/python/libexec/bin/python'
 
 let g:ycm_key_list_select_completion=["<c-p>"]
 let g:ycm_key_list_previous_completion=["<c-n>"]
