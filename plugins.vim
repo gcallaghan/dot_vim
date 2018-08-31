@@ -31,6 +31,7 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_javascript_checkers = ['standard']
+" let g:syntastic_javascript_standard_args = ['--fix']
 " let g:syntastic_go_checkers = ['gometalinter', 'golint', 'gofmt', 'gotype', 'govet']
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi']
@@ -40,6 +41,8 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_java_checkers=['javac']
+let g:syntastic_java_javac_config_file_enabled = 1
 
 
 " ---------------
@@ -200,7 +203,6 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
-let g:ycm_path_to_python_interpreter = '/usr/local/opt/python/libexec/bin/python'
 
 let g:ycm_key_list_select_completion=["<c-p>"]
 let g:ycm_key_list_previous_completion=["<c-n>"]
@@ -294,7 +296,7 @@ let g:voogle_map="<leader>gg"
 " ---------------
 " tcomment_vim
 " ---------------
-let g:tcommentMaps = 0
+let g:tcomment_maps = 0
 nnoremap <silent><leader>cc :TComment<CR>
 vnoremap <silent><leader>cc :TComment<CR>
 nnoremap <silent><leader>cb :TCommentBlock<CR>
@@ -331,6 +333,13 @@ function! s:setupMarkup()
 endfunction
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set filetype=markdown
+
+let g:vim_markdown_conceal = 0
+
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_json_frontmatter = 1
+
 
 """"""""""""
 "  pymode  "

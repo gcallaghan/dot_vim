@@ -36,7 +36,7 @@ else
     fail 'mvim or vim not found in path.'j
 fi
 
-
+rm -fr ~/.vim
 ln -s ~/src/dot_vim ~/.vim
 ln -s ~/src/dot_vim/vimrc ~/.vimrc
 ln -s ~/src/dot_vim/gvimrc ~/.gvimrc

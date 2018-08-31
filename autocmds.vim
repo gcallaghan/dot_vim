@@ -10,6 +10,10 @@ if has("autocmd")
     " No formatting on o key newlines
     autocmd BufNewFile,BufEnter * set formatoptions-=o
 
+    autocmd FileType java setlocal omnifunc=javacomplete#Complete
+    " autoformat js files
+    " autocmd bufwritepost *.js silent !standard --fix %
+
     " No more complaining about untitled documents
     autocmd FocusLost silent! :wa
 

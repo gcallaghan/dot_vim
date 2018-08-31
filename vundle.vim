@@ -25,7 +25,8 @@ Plugin 'fatih/vim-go'
 """"""""""""""""""
 "  UI Additions  "
 """"""""""""""""""
-" Bundle 'nathanaelkane/vim-indent-guides'
+" Bundle 'nathanaelkane/vim-indent-guides'a
+Bundle 'Yggdroot/indentLine'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'Rykka/colorv.vim'
@@ -44,7 +45,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'godlygeek/tabular'
 Plugin 'rking/ag.vim'
 Plugin 'milkypostman/vim-togglelist'
-Plugin 'mutewinter/swap-parameters'
 Plugin 'tpope/vim-abolish'
 Plugin 'scratch.vim'
 Plugin 'AndrewRadev/switch.vim'
@@ -71,6 +71,17 @@ Plugin 'editorconfig/editorconfig-vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             Language Additions                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""
+"  Java  "
+""""""""""
+
+Plugin 'tfnico/vim-gradle'
+Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'tpope/vim-classpath.git'
+
+
 """"""""""""""""
 "  Javascript  "
 """"""""""""""""
@@ -80,10 +91,11 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/vim-js-pretty-template'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'leshill/vim-json'
+Plugin 'elzr/vim-json'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'bdauria/angular-cli.vim'
+Plugin 'posva/vim-vue'
 
 
 """"""""""
@@ -102,9 +114,11 @@ Plugin 'mutewinter/nginx.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mutewinter/vim-tmux'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'cespare/vim-toml'
 Plugin 'chrisbra/csv.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'tell-k/vim-autopep8'
+Plugin 'hashivim/vim-terraform.git'
 
 """"""""""""""
 "  Matching  "
