@@ -29,7 +29,7 @@ Plugin 'fatih/vim-go'
 Bundle 'Yggdroot/indentLine'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
-Bundle 'Rykka/colorv.vim'
+" Bundle 'Rykka/colorv.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mhinz/vim-signify'
 Bundle 'mhinz/vim-startify'
@@ -42,6 +42,7 @@ Bundle 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-dispatch'
 Plugin 'godlygeek/tabular'
 Plugin 'rking/ag.vim'
 Plugin 'milkypostman/vim-togglelist'
@@ -82,6 +83,12 @@ Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'tpope/vim-classpath.git'
 
 
+""""""""""""
+"  Python  "
+""""""""""""
+Plugin 'heavenshell/vim-pydocstring'
+
+
 """"""""""""""""
 "  Javascript  "
 """"""""""""""""
@@ -92,7 +99,6 @@ Plugin 'Quramy/vim-js-pretty-template'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'elzr/vim-json'
-Plugin 'marijnh/tern_for_vim'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'bdauria/angular-cli.vim'
 Plugin 'posva/vim-vue'
@@ -119,6 +125,7 @@ Plugin 'chrisbra/csv.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'hashivim/vim-terraform.git'
+Plugin 'w0rp/ale'
 
 """"""""""""""
 "  Matching  "

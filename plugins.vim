@@ -31,18 +31,19 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_javascript_checkers = ['standard']
+let g:syntastic_html_checkers = ['proslint', 'html-hint', 'textlint']
 " let g:syntastic_javascript_standard_args = ['--fix']
 " let g:syntastic_go_checkers = ['gometalinter', 'golint', 'gofmt', 'gotype', 'govet']
 let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi']
+" let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_java_checkers=['javac']
-let g:syntastic_java_javac_config_file_enabled = 1
+let g:syntastic_java_checkers=[]
+let g:syntastic_java_javac_config_file_enabled = 0
 
 
 " ---------------
@@ -52,7 +53,7 @@ let g:typescript_compiler_binary = 'tsc'
 let g:typescript_compiler_options = ''
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
-autocmd FileType typescript JsPreTmpl html
+" autocmd FileType typescript JsPreTmpl html
 autocmd FileType typescript syn clear foldBraces
 
 autocmd VimEnter * if globpath('.,..','node_modules/@angular') != '' | call angular_cli#init() | endif
@@ -62,7 +63,8 @@ autocmd VimEnter * if globpath('.,..','node_modules/@angular') != '' | call angu
 " ---------------
 
 let test#javascript#tap#file_pattern = 'spec\.js$'
-let test#javascript#tap#executable = './node_modules/.bin/babel-node ./node_modules/.bin/tape -r ./meta/testSetup.js'
+let test#strategy = "dispatch"
+" let test#javascript#tap#executable = './node_modules/.bin/babel-node ./node_modules/.bin/tape -r ./meta/testSetup.js'
 
 
 " ---------------
@@ -351,6 +353,7 @@ let g:pymode_rope_autoimport = 0
 let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_options_max_line_length = 79
 nnoremap <leader>prf :call pymode#rope#rename_module()<CR>
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
 
 
